@@ -9,5 +9,20 @@
 <body>
   <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Initialize DecapCMS
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.CMS) {
+        window.CMS.init();
+      } else {
+        // Retry after a short delay in case the script is still loading
+        setTimeout(() => {
+          if (window.CMS) {
+            window.CMS.init();
+          }
+        }, 1000);
+      }
+    });
+  </script>
 </body>
 </html>
