@@ -8,19 +8,15 @@
     {
       "source": "/admin",
       "destination": "/admin/index.html"
-    },
-    {
-      "source": "/admin/(?!config\\.yml$)(.*)",
-      "destination": "/admin/index.html"
     }
   ],
   "headers": [
     {
-      "source": "/admin/(.*)",
+      "source": "/admin/config.yml",
       "headers": [
         {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
+          "key": "Content-Type",
+          "value": "text/yaml"
         },
         {
           "key": "Cache-Control",
@@ -29,11 +25,11 @@
       ]
     },
     {
-      "source": "/admin/config.yml",
+      "source": "/admin/(.*)",
       "headers": [
         {
-          "key": "Content-Type",
-          "value": "text/yaml"
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
         },
         {
           "key": "Cache-Control",
