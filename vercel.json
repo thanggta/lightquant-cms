@@ -13,38 +13,9 @@
     {
       "source": "/admin",
       "destination": "/admin/index.html"
-    },
-    {
-      "source": "/admin/config.yml",
-      "destination": "/api/admin/config"
     }
   ],
   "headers": [
-    {
-      "source": "/admin/config.yml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/yaml"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type"
-        }
-      ]
-    },
     {
       "source": "/admin/(.*)",
       "headers": [
