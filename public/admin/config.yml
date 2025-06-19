@@ -1,26 +1,25 @@
 backend:
   name: github
-  repo: your-username/your-repo-name # Replace with your GitHub username and repository name
+  repo: your-username/your-blog-repo # Replace with your TARGET blog repository name
   branch: main # Branch to update (optional; defaults to master)
   auth_endpoint: /api/auth
+  # This CMS will create content in the specified repo above, not this CMS repo
 
-# Uncomment the lines below for local development
+# For local development, you can use test-repo backend:
 # backend:
 #   name: test-repo
-
-local_backend: true
 
 # This line should *not* be indented
 publish_mode: editorial_workflow
 
 # This line should *not* be indented
-media_folder: "public/images/uploads" # Media files will be stored in the repo under public/images/uploads
+media_folder: "public/images/uploads" # Media files will be stored in the TARGET repo
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
-    folder: "content/blog" # The path to the folder where the documents are stored
+    folder: "content/posts" # Creates posts in your target blog repo's content/posts folder
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter

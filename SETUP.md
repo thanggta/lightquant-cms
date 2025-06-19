@@ -1,17 +1,25 @@
-# Quick Setup Guide
+# DecapCMS Setup Guide
 
-## 🚀 Deploy to Vercel (Free)
+This repository is a **standalone CMS** that creates content in your **target blog repository**.
+
+## 🏗️ Architecture
+
+- **This Repo**: DecapCMS admin interface only
+- **Target Repo**: Your actual blog/website that receives the content
+
+## 🚀 Deploy CMS to Vercel (Free)
 
 ### Step 1: Update Configuration
 1. Edit `public/admin/config.yml`
-2. Replace `your-username/your-repo-name` with your actual GitHub repo (e.g., `johndoe/my-blog`)
+2. Replace `your-username/your-blog-repo` with your **TARGET blog repository** (e.g., `johndoe/my-nextjs-blog`)
+3. **Important**: This should be your blog repo, NOT this CMS repo
 
-### Step 2: Push to GitHub
+### Step 2: Push CMS to GitHub
 ```bash
 git init
 git add .
-git commit -m "Initial DecapCMS blog setup"
-git remote add origin https://github.com/your-username/your-repo-name.git
+git commit -m "Initial DecapCMS setup"
+git remote add origin https://github.com/your-username/your-cms-repo.git
 git push -u origin main
 ```
 
@@ -41,19 +49,27 @@ git push -u origin main
 
 ## ✅ You're Done!
 
-- **Blog**: Visit your Vercel URL to see your blog
-- **Admin**: Visit `your-site.vercel.app/admin` to manage content
+- **CMS Admin**: Visit `your-cms.vercel.app/admin` to manage content
+- **Your Blog**: Content will be created in your target blog repository
 - **Login**: Click "Login with GitHub" to authenticate
 
 ## 📝 How to Create Content
 
-1. Go to `/admin` on your deployed site
+1. Go to `/admin` on your deployed CMS site
 2. Click "Login with GitHub"
 3. Click "New Blog" to create a post
 4. Write your content in markdown
 5. Save as draft or publish immediately
-6. Changes are automatically committed to your GitHub repo
-7. Vercel automatically deploys updates
+6. **Content is created in your TARGET blog repository** (not this CMS repo)
+7. Your blog site automatically updates when you deploy the target repo
+
+## 🔗 Workflow
+
+```
+CMS Repo (this one) → Creates content → Target Blog Repo → Your Blog Site
+     ↓                                        ↓              ↓
+Vercel (CMS Admin)                    GitHub (Content)   Vercel/Netlify (Blog)
+```
 
 ## 🧪 Local Development & Testing
 

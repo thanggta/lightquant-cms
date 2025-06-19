@@ -1,9 +1,9 @@
 {
   "framework": "nextjs",
-  "buildCommand": "npm run build",
+  "buildCommand": "pnpm run build",
   "outputDirectory": ".next",
-  "installCommand": "npm install --legacy-peer-deps",
-  "devCommand": "npm run dev",
+  "installCommand": "pnpm install --legacy-peer-deps",
+  "devCommand": "pnpm run dev",
   "rewrites": [
     {
       "source": "/admin",
