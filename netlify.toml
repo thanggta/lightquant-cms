@@ -1,0 +1,14 @@
+[build]
+  publish = "out"
+  command = "npm run build && npm run export"
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+[context.production.environment]
+  NEXT_PUBLIC_SITE_URL = "https://your-site.vercel.app"
+
+[context.deploy-preview.environment]
+  NEXT_PUBLIC_SITE_URL = "https://deploy-preview-$DEPLOY_ID--your-site.netlify.app"
