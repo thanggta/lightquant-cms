@@ -10,7 +10,7 @@
       "destination": "/admin/index.html"
     },
     {
-      "source": "/admin/(.*)",
+      "source": "/admin/(?!config\\.yml$)(.*)",
       "destination": "/admin/index.html"
     }
   ],
@@ -21,6 +21,23 @@
         {
           "key": "X-Frame-Options",
           "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/admin/config.yml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/yaml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
         }
       ]
     }
