@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test-config": "node scripts/test-config.js"
   },
   "dependencies": {
     "decap-cms-app": "^3.6.4",

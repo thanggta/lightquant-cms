@@ -3,7 +3,8 @@ backend:
   repo: your-username/your-blog-repo # Replace with your TARGET blog repository name
   branch: main # Branch to update (optional; defaults to master)
   auth_endpoint: /api/auth
-  # This CMS will create content in the specified repo above, not this CMS repo
+  # Optional: Enable GraphQL API for better performance (not compatible with git-gateway)
+  # use_graphql: true
 
 # For local development, you can use test-repo backend:
 # backend:

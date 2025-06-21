@@ -1,79 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager</title>
-  <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.css" />
-</head>
-<body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script>
-    // Initialize DecapCMS with inline configuration
-    window.addEventListener('DOMContentLoaded', function() {
-      // Configuration - easily switch between test and production
-      const isProduction = window.location.hostname !== 'localhost';
-
-      const config = {
-        backend: isProduction ? {
-          name: 'github',
-          repo: 'your-username/your-blog-repo', // Replace with your TARGET blog repository
-          branch: 'main',
-          auth_endpoint: '/api/auth'
-        } : {
-          name: 'test-repo'
-        },
-        publish_mode: 'editorial_workflow',
-        media_folder: 'public/images/uploads',
-        public_folder: '/images/uploads',
-        collections: [
-          {
-            name: 'blog',
-            label: 'Blog',
-            folder: 'content/posts',
-            create: true,
-            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
-            fields: [
-              { label: 'Title', name: 'title', widget: 'string' },
-              { label: 'Publish Date', name: 'date', widget: 'datetime' },
-              { label: 'Featured Image', name: 'thumbnail', widget: 'image', required: false },
-              { label: 'Body', name: 'body', widget: 'markdown' },
-              { label: 'Tags', name: 'tags', widget: 'list', required: false },
-              { label: 'Draft', name: 'draft', widget: 'boolean', default: false }
-            ]
-          },
-          {
-            name: 'pages',
-            label: 'Pages',
-            folder: 'content/pages',
-            create: true,
-            slug: '{{slug}}',
-            fields: [
-              { label: 'Title', name: 'title', widget: 'string' },
-              { label: 'Slug', name: 'slug', widget: 'string' },
-              { label: 'Body', name: 'body', widget: 'markdown' },
-              { label: 'Draft', name: 'draft', widget: 'boolean', default: false }
-            ]
-          }
-        ]
-      };
-
-      if (window.CMS) {
-        console.log('Initializing DecapCMS with inline config...');
-        window.CMS.init({ config });
-      } else {
-        // Retry after a short delay in case the script is still loading
-        setTimeout(() => {
-          if (window.CMS) {
-            console.log('Initializing DecapCMS with inline config (retry)...');
-            window.CMS.init({ config });
-          } else {
-            console.error('DecapCMS failed to load');
-          }
-        }, 1000);
-      }
-    });
-  </script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Content Manager</title>
+  </head>
+  <body>
+    <!-- Include the script that builds the page and powers Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@3.6.4/dist/decap-cms.js"></script>
+  </body>
 </html>
