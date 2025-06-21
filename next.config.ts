@@ -15,6 +15,32 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: '/admin/config.yml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/yaml; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+        ],
+      },
+      {
+        source: '/config.yml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/yaml; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+        ],
+      },
     ];
   },
 };

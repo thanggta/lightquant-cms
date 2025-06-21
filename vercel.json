@@ -16,7 +16,7 @@
     },
     {
       "source": "/config.yml",
-      "destination": "/public/admin/config.yml"
+      "destination": "/admin/config.yml"
     }
   ],
   "headers": [
