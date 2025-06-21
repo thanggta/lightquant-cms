@@ -13,6 +13,10 @@
     {
       "source": "/admin",
       "destination": "/admin/index.html"
+    },
+    {
+      "source": "/config.yml",
+      "destination": "/public/admin/config.yml"
     }
   ],
   "headers": [
