@@ -2,7 +2,9 @@ backend:
   name: github
   repo: your-username/your-blog-repo # Replace with your TARGET blog repository name
   branch: main # Branch to update (optional; defaults to master)
-  auth_endpoint: /api/auth
+  auth:
+    base_url: https://lightquant-cms.vercel.app # Your site's URL
+    auth_endpoint: api/auth # Relative path to your auth endpoint
   # Optional: Enable GraphQL API for better performance (not compatible with git-gateway)
   # use_graphql: true
 

@@ -66,10 +66,13 @@ This guide will help you configure DecapCMS with GitHub authentication according
 ## Step 4: Deploy and Test
 
 1. Deploy your changes to your hosting platform
-2. Visit `https://your-site.vercel.app/admin`
-3. Click "Login with GitHub"
-4. Authorize the application
-5. You should be redirected to the DecapCMS interface
+2. Test that the config file is accessible at `https://your-site.vercel.app/config.yml`
+3. Visit `https://your-site.vercel.app/admin`
+4. Click "Login with GitHub"
+5. Authorize the application
+6. You should be redirected to the DecapCMS interface
+
+**Important**: DecapCMS expects the config.yml file to be available at the root path `/config.yml`, not `/admin/config.yml`. The Vercel configuration includes a rewrite rule to handle this.
 
 ## Troubleshooting
 
